@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand: #d4a017;
+}
+
+html {
+  direction: rtl;
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white font-sans text-ink antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+img {
+  @apply max-w-full;
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-6xl px-4;
+  }
+  .btn {
+    @apply inline-flex min-h-[44px] items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-base font-bold transition active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-primary {
+    @apply btn bg-brand text-ink shadow-sm hover:brightness-95;
+  }
+  .btn-dark {
+    @apply btn bg-ink text-white hover:bg-ink-700;
+  }
+  .btn-outline {
+    @apply btn border-2 border-ink/15 bg-white text-ink hover:border-ink/40;
+  }
+  .btn-danger {
+    @apply btn bg-red-600 text-white hover:bg-red-700;
+  }
+  .btn-sm {
+    @apply min-h-[36px] rounded-lg px-3 py-1.5 text-sm;
+  }
+  .input {
+    @apply min-h-[44px] w-full rounded-xl border border-ink/20 bg-white px-3 py-2 text-base outline-none transition focus:border-gold-500 focus:ring-2 focus:ring-gold-300/60;
+  }
+  .label {
+    @apply mb-1 block text-sm font-semibold text-ink-600;
+  }
+  .card {
+    @apply rounded-2xl border border-ink/10 bg-white shadow-card;
+  }
+  .badge {
+    @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-bold;
+  }
+  .hex-bg {
+    background-color: #111111;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100' viewBox='0 0 56 100'%3E%3Cpath d='M28 66L0 50V16L28 0l28 16v34L28 66zm0 34L0 84V50' fill='none' stroke='%23d4a017' stroke-opacity='0.14' stroke-width='2'/%3E%3C/svg%3E");
+  }
+}
